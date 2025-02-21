@@ -16,6 +16,20 @@
   <link rel="shortcut icon" href="images/bird.jpg">
 </head>
 
+
+<style>
+  .paper-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .paper-img:hover {
+    transform: scale(1.1);
+    /* 放大效果 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* 阴影效果 */
+  }
+</style>
+
 <body>
 
   <div class="navbar-fixed">
@@ -119,9 +133,9 @@
 
         <div class="social-links">
           <a href="https://blog.csdn.net/QH2107?type=blog" target="_blank" class="social-link">CSDN</a>
-          <span class="separator">|</span>
+          <span class="separator"> | </span>
           <a href="https://www.zhihu.com/people/qi-huan-52-47" target="_blank" class="social-link">Zhihu (知乎)</a>
-          <span class="separator">|</span>
+          <span class="separator"> | </span>
           <a href="https://mp.weixin.qq.com/s/LAJDHeLKu_Iqm7RhYa4Ptw" target="_blank" class="social-link">WeChat
             Official Account (公众号)</a>
         </div>
@@ -288,9 +302,14 @@
   <div class="divider"></div>
   <footer class="page-footer white lighten-4">
     <div class="row">
-      <div class="col l4 offset-l4 s12">
-        <script type="text/javascript" id="clustrmaps"
-          src="//clustrmaps.com/map_v2.js?d=_Y7kv9RsPgzT1Pf1TJC3o6mNb-rDfkzoB1qwMdFsbHE&cl=ffffff&w=a"></script>
+      <div class="col l4 offset-l4 s12"
+        style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <a href='https://clustrmaps.com/site/1c4h9' title='Visit tracker'
+          style="display: inline-block; border: 2px solid #ededed; border-radius: 10px; box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); padding: 10px; background-color: #fff;">
+          <img
+            src='//clustrmaps.com/map_v2.png?cl=2390d5&w=a&t=tt&d=_Y7kv9RsPgzT1Pf1TJC3o6mNb-rDfkzoB1qwMdFsbHE&co=e1e9ee&ct=7e3434'
+            alt='ClustrMaps' style="max-width: 100%; height: auto; border-radius: 5px;" />
+        </a>
       </div>
     </div>
     <div class="footer-copyright center black-text">
