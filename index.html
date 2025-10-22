@@ -7,35 +7,177 @@
   <meta name="author" content="chenqihua">
   <title>Qihua Chen's Homepage</title>
 
-  <!-- CSS  -->
+  <!-- CSS -->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/aos.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <link rel="shortcut icon" href="images/bird.jpg">
+
+  <!-- ========================================== -->
+  <!-- Custom Styles                              -->
+  <!-- ========================================== -->
+  <style>
+    /* Title hierarchy */
+    .section-title {
+      font-size: 2.0rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 20px 0 15px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #1e88e5;
+      margin-top: 8px;
+    }
+
+    .subsection-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #34495e;
+      margin: 20px 0 12px;
+    }
+
+    /* Hover effect for paper images */
+    .paper-img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .paper-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Social icons */
+    .social-photo {
+      width: 42px;
+      height: 42px;
+      margin: 0 6px;
+      transition: transform 0.2s;
+    }
+
+    .social-photo:hover {
+      transform: scale(1.2);
+    }
+
+    /* Publication block */
+    .paper-block {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .paper-block:last-child {
+      border-bottom: none;
+    }
+
+    /* Self-media links */
+    .self-media-list {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .self-media-item {
+      display: flex;
+      align-items: center;
+      color: #1e88e5;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .self-media-item:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+
+    .self-media-icon {
+      margin-right: 6px;
+      font-size: 1.2rem;
+    }
+
+    /* Back-to-top button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e88e5;
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 999;
+    }
+
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Footer email */
+    .footer-email {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .footer-email-icon {
+      margin-right: 6px;
+      color: #1e88e5;
+    }
+
+    .email-copy-btn {
+      background: none;
+      border: none;
+      color: #1e88e5;
+      cursor: pointer;
+      margin-left: 6px;
+      font-size: 0.95rem;
+    }
+
+    .email-copy-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Resource list */
+    .resource-list {
+      margin-top: 10px;
+    }
+
+    .resource-list li {
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
-
-
-<style>
-  .paper-img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .paper-img:hover {
-    transform: scale(1.1);
-    /* 放大效果 */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    /* 阴影效果 */
-  }
-</style>
 
 <body>
 
+  <!-- ========================================== -->
+  <!-- Navigation Bar                              -->
+  <!-- ========================================== -->
   <div class="navbar-fixed">
-
     <nav class="">
-      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"></a>
         <ul class="left">
           <li><a class="nav-item waves-effect waves-light" href="#home">Home</a></li>
           <li><a class="nav-item waves-effect waves-light" href="#about">About</a></li>
@@ -43,20 +185,15 @@
           <li><a class="nav-item waves-effect waves-light" href="#activities">Activities</a></li>
           <li><a class="nav-item waves-effect waves-light" href="#Resource">Resource</a></li>
         </ul>
-
       </div>
     </nav>
   </div>
 
-  <!--==========================================
-                   Profile
-===========================================-->
-
+  <!-- ========================================== -->
+  <!-- Home / Profile Section                      -->
+  <!-- ========================================== -->
   <div id="home" class="parallax-container scrollspy">
-
-
     <div class="container row cover-block">
-
       <div class="profile-image-block col s12 m12 l4 center">
         <img class="responsive-img profile-photo z-depth-2" src="images/profile.jpg">
       </div>
@@ -64,50 +201,45 @@
       <div class="profile-content-block col s12 m12 l8">
         <h5 class="profile-name">Qi-Hua Chen</h5>
         <hr>
-        <!-- <h6 class="profile-link"> </h6 class="profile-link">
-        <h6 class="profile-link">Google</h6 class="profile-link"> -->
+        <h6 class="profile-link">ENFJ-A / PhD @ CityU HK</h6>
 
-        <h1></h1>
-
-        <a href="CV.pdf" target="blank"><img class="responsive-img social-photo " src="images/icons/cv.png"></a>
-
-        <a href="https://scholar.google.com/citations?hl=zh-CN&user=kIX_EAIAAAAJ" target="blank"><img
-            class="responsive-img social-photo " src="images/icons/google_scholar.png"></a>
-
-        <a href="https://github.com/QHCV" target="blank"><img class="responsive-img social-photo "
-            src="images/icons/github.png"></a>
-
-        <a href="https://www.researchgate.net/profile/Qihua-Chen-5?ev=hdr_xprf" target="blank"><img
-            class="responsive-img social-photo" src="images/icons/linkedin.png"></a>
-
+        <!-- Social & CV Links -->
+        <div style="margin-top: 15px;">
+          <a href="CV.pdf" target="_blank" title="Download CV">
+            <img class="responsive-img social-photo" src="images/icons/cv.png">
+          </a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&user=kIX_EAIAAAAJ" target="_blank"
+            title="Google Scholar">
+            <img class="responsive-img social-photo" src="images/icons/google_scholar.png">
+          </a>
+          <a href="https://github.com/QHCV" target="_blank" title="GitHub">
+            <img class="responsive-img social-photo" src="images/icons/github.png">
+          </a>
+          <a href="https://www.researchgate.net/profile/Qihua-Chen-5?ev=hdr_xprf" target="_blank" title="ResearchGate">
+            <img class="responsive-img social-photo" src="images/icons/linkedin.png">
+          </a>
+        </div>
       </div>
-
     </div>
-
-    <div class="parallax"><img src="images/cover_blur.jpg" alt="Unsplashed background img 1"></div>
-
+    <div class="parallax"><img src="images/cover_blur.jpg" alt="Background"></div>
   </div>
 
-
   <!-- ========================================== -->
-  <!-- About -->
-  <!-- =========================================== -->
+  <!-- About Me Section                            -->
+  <!-- ========================================== -->
   <div class="section about-section scrollspy" id="about">
-
     <div class="row container">
       <br><br>
-      <div class="row">
-        <div class="title">About Me</div>
-        <hr>
-      </div>
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
 
-      <div class="row">
+      <div class="row" data-aos="fade-up">
         <p>
-          I recently graduated from <strong>Southwest Jiaotong University</strong>, where my research focused on
-          <strong>smart construction safety management</strong>. Currently, I am working as a <strong>Research
-            Assistant</strong> at the <strong>City University of Hong Kong</strong>, exploring innovative ways to
-          integrate
-          cutting-edge technologies into the Management and Sustainable development.
+          I earned my Master's degree from <strong>Southwest Jiaotong University</strong> in 2024, where my research
+          focused on
+          <strong>smart construction safety management</strong>. Currently, I am a <strong>PhD student</strong> at the
+          <strong>City University of Hong Kong</strong>, exploring innovative ways to integrate cutting-edge
+          technologies
+          into management and sustainable development.
         </p>
 
         <p>
@@ -116,413 +248,351 @@
 
         <ol class="interests-list">
           <li><strong>Harnessing Generative AI for Construction Management</strong></li>
-          <li><strong>Applying Reinforcement Learning in Optimization and Decision-making</strong> </li>
+          <li><strong>Applying Reinforcement Learning in Optimization and Decision-making</strong></li>
           <li><strong>AI-Empowered Smart Operations and Maintenance of Infrastructure</strong></li>
-          <li><strong>Big Data Mining for Sustainable Urban Research</strong> </li>
+          <li><strong>Big Data Mining for Sustainable Urban Research</strong></li>
         </ol>
 
         <p>
           Outside of academics, I enjoy an active lifestyle. My hobbies include playing <strong>table tennis</strong>
           and
           <strong>badminton</strong>, hiking through scenic trails, and occasionally running. Additionally, I run an
-          academic
-          self-media account where I share my <strong>learning experiences</strong> and insights with a broader
+          academic self-media account where I share my <strong>learning experiences</strong> and insights with a broader
           audience.
+          Feel free to connect and exchange ideas with me!
         </p>
 
-        <div class="social-links">
-          <a href="https://blog.csdn.net/QH2107?type=blog" target="_blank" class="social-link">CSDN</a>
-          <span class="separator"> | </span>
-          <a href="https://www.zhihu.com/people/qi-huan-52-47" target="_blank" class="social-link">Zhihu (知乎)</a>
-          <span class="separator"> | </span>
-          <a href="https://mp.weixin.qq.com/s/LAJDHeLKu_Iqm7RhYa4Ptw" target="_blank" class="social-link">WeChat
-            Official Account (公众号)</a>
+        <!-- Self-media accounts with icons -->
+        <div class="self-media-list">
+          <a href="https://blog.csdn.net/QH2107?type=blog" target="_blank" class="self-media-item">
+            <i class="fa fa-code self-media-icon"></i> CSDN
+          </a>
+          <a href="https://www.zhihu.com/people/qi-huan-52-47" target="_blank" class="self-media-item">
+            <i class="fa fa-question-circle self-media-icon"></i> Zhihu (知乎)
+          </a>
+          <a href="https://mp.weixin.qq.com/s/LAJDHeLKu_Iqm7RhYa4Ptw" target="_blank" class="self-media-item">
+            <i class="fa fa-wechat self-media-icon"></i> WeChat Official Account (公众号)
+          </a>
         </div>
-
       </div>
-      <!-- 
-      <div class="row">
-
-        <ul class="timeline">
-          <li class="timeline-inverted" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
-            data-aos-duration="500">
-            <div class="timeline-badge">
-              <i class="fa fa-plus-circle invert" id=""></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="col s4">
-                <a href="http://www.ntu.edu.tw/english/index.html" target="blank">
-                  <img class="responsive-img about-photo" src="images/about/swjtu.jpg">
-                </a>
-              </div>
-              <div class="col s8">
-                <div class="timeline-heading">
-                  <a href="http://www.ntu.edu.tw/english/index.html" target="blank">
-                    Southwest Jiaotong University
-                  </a>
-                </div>
-                <div class="timeline-body">
-                  <p>MSc(Eng)</p>
-                  <p>Sep. 2021 - Jul. 2024</p>
-                </div>
-              </div>
-
-            </div>
-          </li>
-          <li class="clearfix no-float"></li>
-        </ul>
-
-      </div>
-
-    -->
-
-
     </div>
   </div>
 
-
-  <!--==========================================
-                   Publication
-===========================================-->
+  <!-- ========================================== -->
+  <!-- Publications Section                        -->
+  <!-- ========================================== -->
   <div class="section publication-section scrollspy" id="publication">
-
     <div class="row container">
-      <div class="row">
-        <div class="title">Publications</div>
-        <hr>
-      </div>
+      <h2 class="section-title" data-aos="fade-up">Publications</h2>
 
-      <div class="row paper-block">
+      <!-- Paper 1 -->
+      <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
-          <a href="https://qhcv.github.io/chenasuny/publications/cakg/" target="blank">
-            <div class="cf">
-              <img class="responsive-img paper-img" src="publications/cakg/images/fw.jpg">
-            </div>
+          <a href="https://qhcv.github.io/chenasuny/publications/cakg/" target="_blank">
+            <img class="responsive-img paper-img" src="publications/cakg/images/fw.jpg">
           </a>
         </div>
-
         <div class="col s12 m12 l8">
-          <a href="https://qhcv.github.io/chenasuny/publications/cakg/" class="paper-title" target="_blank">Knowledge
-            Graph
-            Improved Dynamic Risk Analysis Method for Behavior-Based Safety Management on a Construction Site</a>
+          <a href="https://qhcv.github.io/chenasuny/publications/cakg/" class="paper-title" target="_blank">
+            Knowledge Graph Improved Dynamic Risk Analysis Method for Behavior-Based Safety Management on a Construction
+            Site
+          </a>
           <div class="paper-author">
-            <b><a href="" target="_blank">Qihua Chen</a></b>,
-            <a href="" target="_blank">Danbin Long<sup>*</sup></a>,
-            <a href="" target="_blank">Cheng Yang</a>, and
-            <a href="" target="_blank">Hu Xu</a>
+            <b>Qihua Chen</b>,
+            Danbin Long<sup>*</sup>,
+            Cheng Yang, and Hu Xu
           </div>
-          <div class="paper-conf"> <b>Journal of Management in Engineering, 2023 </b></div>
-          <div class="paper-conf">
-            <a href="https://ascelibrary.org/doi/abs/10.1061/JMENEA.MEENG-5306
-                                                " target="_blank" class="styled-link">
-              https://ascelibrary.org/doi/abs/10.1061/JMENEA.MEENG-5306
-            </a>
-          </div>
+          <div class="paper-conf"><b>Journal of Management in Engineering, 2023</b></div>
           <div>
-            <img class="responsive-img icon" src="images/icons/pdf.jpg">
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
             <a href="https://ascelibrary.org/doi/abs/10.1061/JMENEA.MEENG-5306" target="_blank">paper</a>
           </div>
         </div>
-
       </div>
 
-
-
-      <div class="row paper-block">
+      <!-- Paper 2 -->
+      <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
-          <a href="https://qhcv.github.io/chenasuny/publications/cppevd/" target="blank">
-            <div class="cf">
-              <img class="responsive-img paper-img" src="publications/cppevd/images/fw.jpg">
-            </div>
+          <a href="https://qhcv.github.io/chenasuny/publications/cppevd/" target="_blank">
+            <img class="responsive-img paper-img" src="publications/cppevd/images/fw.jpg">
           </a>
         </div>
-
         <div class="col s12 m12 l8">
-          <a href="https://qhcv.github.io/chenasuny/publications/cppevd/" class="paper-title" target="_blank">Real-Time
-            Detection of Personal Protective Equipment Violations for
-            Construction Workers Using Semisupervised Learning and Video Clips</a>
+          <a href="https://qhcv.github.io/chenasuny/publications/cppevd/" class="paper-title" target="_blank">
+            Real-Time Detection of Personal Protective Equipment Violations for Construction Workers Using
+            Semisupervised Learning and Video Clips
+          </a>
           <div class="paper-author">
-            <b><a href="" target="blank">Qihua Chen</a></b>,
-            <a href="" target="blank"> Danbin Long<b><sup>*</sup></b></a>,
-            <a href="" target="blank"> Siqi Wang</a>,
-            <a href="" target="blank"> Qirong Chen</a>, and
-            <a href="" target="blank">Beifei Yuan</a>
+            <b>Qihua Chen</b>,
+            Danbin Long<sup>*</sup>,
+            Siqi Wang,
+            Qirong Chen, and Beifei Yuan
           </div>
-          <div class="paper-conf"> <b>Journal of Construction Engineering and Management
-              , 2025 </b></div>
-          <div class="paper-conf">
-            <a href="https://ascelibrary.org/doi/10.1061/JCEMD4.COENG-15310 
-                                      " target="_blank" class="styled-link">
-              https://ascelibrary.org/doi/10.1061/JCEMD4.COENG-15310
-            </a>
-          </div>
+          <div class="paper-conf"><b>Journal of Construction Engineering and Management, 2025</b></div>
           <div>
-            <img class="responsive-img icon" src="images/icons/pdf.jpg">
-            <a href="https://ascelibrary.org/doi/10.1061/JCEMD4.COENG-15310" target="blank">paper</a> | <a
-              href="https://github.com/QHCV/CPPED" target="blank">Dataset</a>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://ascelibrary.org/doi/10.1061/JCEMD4.COENG-15310" target="_blank">paper</a> |
+            <a href="https://github.com/QHCV/CPPED" target="_blank">Dataset</a>
           </div>
-
         </div>
       </div>
-      <!--      开始 -->
 
-      <div class="row paper-block">
+      <!-- Paper 3 -->
+      <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
-          <a href="https://qhcv.github.io/chenasuny/publications/qmixrl/" target="blank">
-            <div class="cf">
-              <img class="responsive-img paper-img" src="publications/qmixrl/images/fw.jpg">
-            </div>
+          <a href="https://qhcv.github.io/chenasuny/publications/qmixrl/" target="_blank">
+            <img class="responsive-img paper-img" src="publications/qmixrl/images/fw.jpg">
           </a>
         </div>
-
         <div class="col s12 m12 l8">
-          <a href="https://qhcv.github.io/chenasuny/publications/qmixrl/" class="paper-title"
-            target="_blank">Coordinating dynamic signage for evacuation guidance: A multi-agent reinforcement learning
-            approach integrating mesoscopic crowd modeling and fire propagation</a>
+          <a href="https://qhcv.github.io/chenasuny/publications/qmixrl/" class="paper-title" target="_blank">
+            Coordinating dynamic signage for evacuation guidance: A multi-agent reinforcement learning approach
+            integrating mesoscopic crowd modeling and fire propagation
+          </a>
           <div class="paper-author">
-            <a href="" target="_blank">Chuan-Zhi Thomas Xie</a>,
-            <b><a href="" target="_blank">Qihua Chen<sup></sup></a></b>,
-            <a href="" target="_blank">Bin Zhu</a>,
-            <a href="" target="_blank">Eric Wai Ming Lee,</a> ...., and
-            <a href="" target="_blank">Botao Zhang</a>
+            Chuan-Zhi Thomas Xie,
+            <b>Qihua Chen</b>,
+            Bin Zhu,
+            Eric Wai Ming Lee, ...., and Botao Zhang
           </div>
-          <div class="paper-conf"> <b>Chaos, Solitons & Fractals, 2025 </b></div>
-          <div class="paper-conf">
-            <a href="https://doi.org/10.1016/j.chaos.2025.116246" target="_blank" class="styled-link">
-              https://doi.org/10.1016/j.chaos.2025.116246
-            </a>
-          </div>
+          <div class="paper-conf"><b>Chaos, Solitons & Fractals, 2025</b></div>
           <div>
-            <img class="responsive-img icon" src="images/icons/pdf.jpg">
-            <a href="https://doi.org/10.1016/j.chaos.2025.116246" target="_blank">paper</a>| <a
-              href="https://github.com/QHCV/Qmix_signal" target="blank">Code</a>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://doi.org/10.1016/j.chaos.2025.116246" target="_blank">paper</a> |
+            <a href="https://github.com/QHCV/Qmix_signal" target="_blank">Code</a>
           </div>
         </div>
-
       </div>
 
-      <!--      结束-->
-
-
-      <!--      开始 -->
-
-      <div class="row paper-block">
+      <!-- Paper 4 -->
+      <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
-          <a href="https://qhcv.github.io/chenasuny/publications/chatch/" target="blank">
-            <div class="cf">
-              <img class="responsive-img paper-img" src="publications/chatch/images/fw.jpg">
-            </div>
+          <a href="https://qhcv.github.io/chenasuny/publications/chatch/" target="_blank">
+            <img class="responsive-img paper-img" src="publications/chatch/images/fw.jpg">
           </a>
         </div>
-
         <div class="col s12 m12 l8">
-          <a href="https://qhcv.github.io/chenasuny/publications/chatch/" class="paper-title" target="_blank">Tailored
-            vision-language framework for automated hazard identification and report generation in construction
-            sites</a>
+          <a href="https://qhcv.github.io/chenasuny/publications/chatch/" class="paper-title" target="_blank">
+            Tailored vision-language framework for automated hazard identification and report generation in construction
+            sites
+          </a>
           <div class="paper-author">
-            <b><a href="" target="_blank">Qihua Chen<sup></sup></a></b>,
-            <a href="" target="_blank">Xianfei Yin*</a>
+            <b>Qihua Chen</b>,
+            Xianfei Yin*
           </div>
-          <div class="paper-conf"> <b>Advanced Engineering Informatics, 2025 </b></div>
-          <div class="paper-conf">
-            <a href="https://doi.org/10.1016/j.aei.2025.103478" target="_blank" class="styled-link">
-              https://doi.org/10.1016/j.aei.2025.103478
-            </a>
-          </div>
+          <div class="paper-conf"><b>Advanced Engineering Informatics, 2025</b></div>
           <div>
-            <img class="responsive-img icon" src="images/icons/pdf.jpg">
-            <a href="https://doi.org/10.1016/j.aei.2025.103478" target="_blank">paper</a>| <a
-              href="https://github.com/QHCV/lowlight-foggy" target="blank">Related Code</a>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://doi.org/10.1016/j.aei.2025.103478" target="_blank">paper</a> |
+            <a href="https://github.com/QHCV/lowlight-foggy" target="_blank">Related Code</a>
           </div>
         </div>
-
       </div>
 
-      <!--      结束-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <!-- Paper 5 -->
+      <div class="row paper-block" data-aos="fade-up">
+        <div class="col s12 m12 l4 center">
+          <a href="https://qhcv.github.io/chenasuny/publications/pstw/" target="_blank">
+            <img class="responsive-img paper-img" src="publications/pstw/images/fw.jpg">
+          </a>
+        </div>
+        <div class="col s12 m12 l8">
+          <a href="https://qhcv.github.io/chenasuny/publications/pstw/" class="paper-title" target="_blank">
+            Personalized safety training for construction workers: A large language model-driven multi-agent framework
+            integrated with knowledge graph reasoning
+          </a>
+          <div class="paper-author">
+            <b>Qihua Chen</b>,
+            Xianfei Yin*,
+            Beifei Yuan, and Qirong Chen
+          </div>
+          <div class="paper-conf"><b>Computers in Industry, 2026</b></div>
+          <div>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://doi.org/10.1016/j.compind.2025.104399" target="_blank">paper</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-
-
-
-
-  <!--==========================================
-              Colliberation Publication
-    ===========================================-->
-
-  <div class="section publication-section scrollspy" id="publication">
-
+  <!-- ========================================== -->
+  <!-- Collaboration Publications Section          -->
+  <!-- ========================================== -->
+  <div class="section publication-section scrollspy" id="collaboration-publication">
     <div class="row container">
-      <div class="row">
-        <div class="title">Colliberation Publications</div>
-        <hr>
-      </div>
+      <h2 class="section-title" data-aos="fade-up">Collaboration Publications</h2>
 
-      <div class="row paper-block">
+      <!-- Collab Paper 1 -->
+      <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
-          <a href="https://doi.org/10.1016/j.trd.2025.104607" target="blank">
-            <div class="cf">
-              <img class="responsive-img paper-img"
-                src="https://qhcv.github.io/chenasuny/co_publications/ccls/images/fw.jpg">
-            </div>
+          <a href="https://doi.org/10.1016/j.trd.2025.104607" target="_blank">
+            <img class="responsive-img paper-img"
+              src="https://qhcv.github.io/chenasuny/co_publications/ccls/images/fw.jpg">
           </a>
         </div>
-
         <div class="col s12 m12 l8">
-          <a href="https://doi.org/10.1016/j.trd.2025.104607" class="paper-title" target="_blank">Can policy achieve the
-            goal of cold chain logistics sustainable development?</a>
+          <a href="https://doi.org/10.1016/j.trd.2025.104607" class="paper-title" target="_blank">
+            Can policy achieve the goal of cold chain logistics sustainable development?
+          </a>
           <div class="paper-author">
-            <a href="" target="_blank">Beifei Yuan </a>,
-            <a href="" target="_blank">Fengming Tao<sup>*</sup></a>,
-            <a href="" target="_blank">Yan Qin</a>,
-            <a href="" target="_blank">Yan Qin</a>,
-            <b>
-              <href="" target="_blank">Qihua Chen </a>
-            </b>, and
-            <a href="" target="_blank">Yangyang Su</a>
+            Beifei Yuan,
+            Fengming Tao<sup>*</sup>,
+            Yan Qin,
+            Yan Qin,
+            <b>Qihua Chen</b>, and Yangyang Su
           </div>
-          <div class="paper-conf"><b>Transportation Research Part D, 2025, </b></div>
-          <div class="paper-conf">
-            <a href="https://doi.org/10.1016/j.trd.2025.104607 
-                  " target="_blank" class="styled-link">
-              https://doi.org/10.1016/j.trd.2025.104607
-            </a>
-          </div>
-
+          <div class="paper-conf"><b>Transportation Research Part D, 2025</b></div>
           <div>
-            <img class="responsive-img icon" src="images/icons/pdf.jpg">
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
             <a href="https://doi.org/10.1016/j.trd.2025.104607" target="_blank">paper</a>
           </div>
         </div>
-
       </div>
 
+      <!-- Collab Paper 2 -->
+      <div class="row paper-block" data-aos="fade-up">
+        <div class="col s12 m12 l4 center">
+          <a href="https://doi.org/10.1108/ECAM-07-2024-0864" target="_blank">
+            <img class="responsive-img paper-img"
+              src="https://qhcv.github.io/chenasuny/co_publications/ccls/images/t2t.jpg">
+          </a>
+        </div>
+        <div class="col s12 m12 l8">
+          <a href="https://doi.org/10.1108/ECAM-07-2024-0864" class="paper-title" target="_blank">
+            Tailor-to-target: configuring construction worker safety behavior on big five personality traits
+          </a>
+          <div class="paper-author">
+            Beifei Yuan,
+            Fengming Tao<sup>*</sup>,
+            Meiling Chen,
+            <b>Qihua Chen</b>, and Sha Lai
+          </div>
+          <div class="paper-conf"><b>Engineering, Construction and Architectural Management, 2025</b></div>
+          <div>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://doi.org/10.1108/ECAM-07-2024-0864" target="_blank">paper</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-
-  <!--==========================================
-                   Activities
-=========================================== -->
+  <!-- ========================================== -->
+  <!-- Academic Activities Section                 -->
+  <!-- ========================================== -->
   <div class="section activities-section scrollspy" id="activities">
-
     <div class="row container">
-      <div class="col s12">
-        <div class="title">Academic Activities</div>
-        <hr>
-        <h5>Presentation</h5>
-        <ul>
-          <li>&emsp; &bull; The 8th National BIM Academic Conference, 2024, Oral presentation.</li>
-          <li>&emsp; &bull; The 3rd National Academic Conference on Civil Engineering Calculation and Simulation
-            Technology, 2024, Oral presentation.</li>
-          <!-- <li>&emsp; &bull; CVPR 2015 Poster</li> -->
-        </ul>
+      <h2 class="section-title" data-aos="fade-up">Academic Activities</h2>
 
-        <!-- <h5>Conference Reviewer</h5>
-        <ul>
-          <li>&emsp; &bull; IEEE Conference on Computer Vision and Pattern Recognition, 2017 (<b>CVPR 2017</b>)</li>
-          <li>&emsp; &bull; European Conference on Computer Vision, 2016 (<b>ECCV 2016</b>)</li>
-          <li>&emsp; &bull; Asian Conference on Computer Vision, 2016 (<b>ACCV 2016</b>)</li>
-          <li>&emsp; &bull; Neural Information Processing Systems, 2016 (<b>NIPS 2016</b>)</li>
-          <li>&emsp; &bull; Pacific Graphics, 2016 (<b>PG 2016</b>)</li>
-        </ul> -->
+      <h3 class="subsection-title">Presentations</h3>
+      <ul data-aos="fade-up">
+        <li>&bull; The 8th National BIM Academic Conference, 2023, Oral presentation.</li>
+        <li>&bull; The 3rd National Academic Conference on Civil Engineering Calculation and Simulation Technology,
+          2023, Oral presentation.</li>
+      </ul>
 
-        <h5>Journal Reviewer</h5>
-        <ul>
-          <li>&emsp; &bull; Sustainable Cities and Society (<b>SCS</b>)</li>
-          <!-- <li>&emsp; &bull; Signal, Image and Video Processing (<b>SVIP</b>)</li> -->
-        </ul>
-
-      </div>
+      <h3 class="subsection-title">Journal Reviewer</h3>
+      <ul data-aos="fade-up">
+        <li>&bull; Sustainable Cities and Society (<b>SCS</b>)</li>
+        <li>&bull; Scientific Reports</li>
+        <li>&bull; Cluster Computing</li>
+      </ul>
     </div>
-
   </div>
 
-
-  <!--==========================================
-                   Resource
-=========================================== -->
+  <!-- ========================================== -->
+  <!-- Resource Section                            -->
+  <!-- ========================================== -->
   <div class="section activities-section scrollspy" id="Resource">
-
     <div class="row container">
-      <div class="col s12">
-        <div class="title">Resource</div>
-        <hr>
-        <h5>.....</h5>
-        <ul>
-          <li>&emsp; &bull; .....</li>
-          <!-- <li>&emsp; &bull; CVPR 2015 Poster</li> -->
-        </ul>
-
-        <!-- <h5>Conference Reviewer</h5>
-        <ul>
-          <li>&emsp; &bull; IEEE Conference on Computer Vision and Pattern Recognition, 2017 (<b>CVPR 2017</b>)</li>
-          <li>&emsp; &bull; European Conference on Computer Vision, 2016 (<b>ECCV 2016</b>)</li>
-          <li>&emsp; &bull; Asian Conference on Computer Vision, 2016 (<b>ACCV 2016</b>)</li>
-          <li>&emsp; &bull; Neural Information Processing Systems, 2016 (<b>NIPS 2016</b>)</li>
-          <li>&emsp; &bull; Pacific Graphics, 2016 (<b>PG 2016</b>)</li>
-        </ul>
-
-        <h5>Journal Reviewer</h5>
-        <ul>
-          <li>&emsp; &bull; Computer Vision and Image Understanding (<b>CVIU</b>)</li>
-          <li>&emsp; &bull; Signal, Image and Video Processing (<b>SVIP</b>)</li>
-        </ul> -->
-
-      </div>
+      <h2 class="section-title" data-aos="fade-up">Resource</h2>
+      <p style="color: #666;" data-aos="fade-up">
+        I actively share research outputs and tools to support the community.
+      </p>
+      <ul class="resource-list" data-aos="fade-up">
+        <li>&bull; <a href="https://github.com/QHCV/CPPED" target="_blank"><strong>CPPED</strong></a>: Construction
+          Personal Protective Equipment Violation Dataset (from <em>JCEM 2025</em> paper)</li>
+        <li>&bull; <a href="https://github.com/QHCV/Text2label" target="_blank"><strong>Text2Label</strong></a>: A
+          Flask-based binary text tagging tool for report annotation and labeling</li>
+      </ul>
     </div>
-
   </div>
 
-
-
-
-
-  <!--==========================================
-                   Footer
-===========================================-->
-
-
+  <!-- ========================================== -->
+  <!-- Footer                                      -->
+  <!-- ========================================== -->
   <div class="divider"></div>
   <footer class="page-footer white lighten-4">
     <div class="row">
-      <div class="col l4 offset-l4 s12"
-        style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-        <a href='https://clustrmaps.com/site/1c4h9' title='Visit tracker'
-          style="display: inline-block; border: 2px solid #ededed; border-radius: 10px; box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); padding: 10px; background-color: #fff;">
-          <img
-            src='//clustrmaps.com/map_v2.png?cl=2390d5&w=a&t=tt&d=_Y7kv9RsPgzT1Pf1TJC3o6mNb-rDfkzoB1qwMdFsbHE&co=e1e9ee&ct=7e3434'
-            alt='ClustrMaps' style="max-width: 100%; height: auto; border-radius: 5px;" />
-        </a>
+      <div class="col s12 center-align">
+        <div class="visitor-map-container" style="display: inline-block; max-width: 100%;">
+          <a href='https://clustrmaps.com/site/1c4h9' title='Visit tracker' style="display: inline-block; border: 2px solid #ededed; border-radius: 10px; 
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; background-color: #fff;">
+            <img
+              src='//clustrmaps.com/map_v2.png?cl=2390d5&w=a&t=tt&d=_Y7kv9RsPgzT1Pf1TJC3o6mNb-rDfkzoB1qwMdFsbHE&co=e1e9ee&ct=7e3434'
+              alt='ClustrMaps' style="max-width: 100%; height: auto; border-radius: 5px;" />
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- Email in footer -->
+    <div class="footer-email">
+      <i class="fa fa-envelope footer-email-icon"></i>
+      chenasuny@gmail.com
+      <button class="email-copy-btn"
+        onclick="navigator.clipboard.writeText('chenasuny@gmail.com'); this.textContent='Copied!'; setTimeout(() => this.textContent='Copy', 1500);">
+        Copy
+      </button>
+    </div>
+
     <div class="footer-copyright center black-text">
-      © 2024-present QH
+      © 2024–present QH | updated 22/10/2024
     </div>
   </footer>
 
+  <!-- Back-to-top button -->
+  <a id="back-to-top" href="#home">
+    <i class="fa fa-arrow-up"></i>
+  </a>
 
-  <!--  Scripts-->
+  <!-- ========================================== -->
+  <!-- Scripts                                     -->
+  <!-- ========================================== -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/init.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true });
+
+    // Back-to-top button logic
+    window.addEventListener('scroll', () => {
+      const backToTop = document.getElementById('back-to-top');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 60,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
