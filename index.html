@@ -11,7 +11,7 @@
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/aos.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css?v=20260617a" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <link rel="shortcut icon" href="images/bird.jpg">
 
@@ -171,52 +171,87 @@
 
 <body>
 
+  <div class="reading-progress" id="reading-progress"></div>
+
   <!-- ========================================== -->
   <!-- Navigation Bar                              -->
   <!-- ========================================== -->
   <div class="navbar-fixed">
-    <nav class="">
+    <nav class="site-nav">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo"></a>
-        <ul class="left">
-          <li><a class="nav-item waves-effect waves-light" href="#home">Home</a></li>
-          <li><a class="nav-item waves-effect waves-light" href="#about">About</a></li>
-          <li><a class="nav-item waves-effect waves-light" href="#publication">Publications</a></li>
-          <li><a class="nav-item waves-effect waves-light" href="#activities">Activities</a></li>
-          <li><a class="nav-item waves-effect waves-light" href="#Resource">Resource</a></li>
+        <a id="logo-container" href="#home" class="brand-logo nav-brand">Qihua Chen</a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse right nav-menu"><i class="fa fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="nav-item waves-effect waves-light" href="#home" data-en="Home" data-zh="首页">Home</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#about" data-en="About" data-zh="关于我">About</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#highlights" data-en="Highlights" data-zh="研究亮点">Highlights</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#publication" data-en="Publications" data-zh="论文成果">Publications</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#activities" data-en="Activities" data-zh="学术活动">Activities</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#Resource" data-en="Resource" data-zh="资源">Resource</a></li>
+          <li><a class="nav-item waves-effect waves-light" href="#links" data-en="Links" data-zh="友链">Links</a></li>
+          <li><button type="button" class="lang-toggle" data-lang-toggle aria-label="切换到中文">中文</button></li>
         </ul>
       </div>
     </nav>
   </div>
+  <ul class="side-nav" id="mobile-nav">
+    <li><a href="#home" data-en="Home" data-zh="首页">Home</a></li>
+    <li><a href="#about" data-en="About" data-zh="关于我">About</a></li>
+    <li><a href="#highlights" data-en="Highlights" data-zh="研究亮点">Highlights</a></li>
+    <li><a href="#publication" data-en="Publications" data-zh="论文成果">Publications</a></li>
+    <li><a href="#activities" data-en="Activities" data-zh="学术活动">Activities</a></li>
+    <li><a href="#Resource" data-en="Resource" data-zh="资源">Resource</a></li>
+    <li><a href="#links" data-en="Links" data-zh="友链">Links</a></li>
+    <li><a href="CV.pdf" target="_blank" data-en="Download CV" data-zh="下载简历">Download CV</a></li>
+    <li><button type="button" class="lang-toggle mobile-lang-toggle" data-lang-toggle aria-label="切换到中文">中文</button></li>
+  </ul>
 
   <!-- ========================================== -->
   <!-- Home / Profile Section                      -->
   <!-- ========================================== -->
   <div id="home" class="parallax-container scrollspy">
-    <div class="container row cover-block">
-      <div class="profile-image-block col s12 m12 l4 center">
-        <img class="responsive-img profile-photo z-depth-2" src="images/profile.jpg">
+    <div class="hero-overlay"></div>
+    <div class="container row cover-block hero-layout">
+      <div class="profile-image-block col s12 m5 l4 center">
+        <div class="profile-frame">
+          <img class="responsive-img profile-photo z-depth-2" src="images/profile.jpg" alt="Portrait of Qi-Hua Chen">
+        </div>
       </div>
 
-      <div class="profile-content-block col s12 m12 l8">
-        <h5 class="profile-name">Qi-Hua Chen</h5>
-        <hr>
+      <div class="profile-content-block col s12 m7 l8">
+        <h1 class="profile-name">Qi-Hua Chen</h1>
+        <p class="hero-tagline" data-en="AI for construction safety, smart infrastructure operations, and sustainable urban systems."
+          data-zh="面向施工安全、智慧基础设施运维与可持续城市系统的人工智能研究。">
+          AI for construction safety, smart infrastructure operations, and sustainable urban systems.
+        </p>
         <h6 class="profile-link">ENFJ-A / PhD @ CityU HK</h6>
 
+        <div class="hero-research-tags">
+          <span data-en="Generative AI" data-zh="生成式人工智能">Generative AI</span>
+          <span data-en="Reinforcement Learning" data-zh="强化学习">Reinforcement Learning</span>
+          <span data-en="Vision-Language Models" data-zh="视觉语言模型">Vision-Language Models</span>
+          <span data-en="Smart Construction" data-zh="智慧建造">Smart Construction</span>
+        </div>
+
         <!-- Social & CV Links -->
-        <div style="margin-top: 15px;">
-          <a href="CV.pdf" target="_blank" title="Download CV">
-            <img class="responsive-img social-photo" src="images/icons/cv.png">
+        <div class="hero-actions">
+          <a href="CV.pdf" target="_blank" title="Download CV" class="hero-action primary-action">
+            <img class="responsive-img social-photo" src="images/icons/cv.png" alt="CV icon">
+            <span>CV</span>
           </a>
           <a href="https://scholar.google.com/citations?hl=zh-CN&user=kIX_EAIAAAAJ" target="_blank"
-            title="Google Scholar">
-            <img class="responsive-img social-photo" src="images/icons/google_scholar.png">
+            title="Google Scholar" class="hero-action">
+            <img class="responsive-img social-photo" src="images/icons/google_scholar.png" alt="Google Scholar icon">
+            <span>Scholar</span>
           </a>
-          <a href="https://github.com/QHCV" target="_blank" title="GitHub">
-            <img class="responsive-img social-photo" src="images/icons/github.png">
+          <a href="https://github.com/QHCV" target="_blank" title="GitHub" class="hero-action">
+            <img class="responsive-img social-photo" src="images/icons/github.png" alt="GitHub icon">
+            <span>GitHub</span>
           </a>
-          <a href="https://www.researchgate.net/profile/Qihua-Chen-5?ev=hdr_xprf" target="_blank" title="ResearchGate">
-            <img class="responsive-img social-photo" src="images/icons/linkedin.png">
+          <a href="https://www.researchgate.net/profile/Qihua-Chen-5?ev=hdr_xprf" target="_blank" title="ResearchGate"
+            class="hero-action">
+            <i class="fa fa-flask"></i>
+            <span>ResearchGate</span>
           </a>
         </div>
       </div>
@@ -230,10 +265,11 @@
   <div class="section about-section scrollspy" id="about">
     <div class="row container">
       <br><br>
-      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <h2 class="section-title" data-aos="fade-up" data-en="About Me" data-zh="关于我">About Me</h2>
 
       <div class="row" data-aos="fade-up">
-        <p>
+        <p data-en="I earned my Master's degree from Southwest Jiaotong University in 2024, where my research focused on smart construction safety management. Currently, I am a PhD student at the City University of Hong Kong, exploring innovative ways to integrate cutting-edge technologies into management and sustainable development."
+          data-zh="我于 2024 年在西南交通大学获得硕士学位，研究方向聚焦于智慧建造安全管理。目前，我是香港城市大学博士生，主要探索如何将前沿智能技术融入工程管理与可持续发展。">
           I earned my Master's degree from <strong>Southwest Jiaotong University</strong> in 2024, where my research
           focused on
           <strong>smart construction safety management</strong>. Currently, I am a <strong>PhD student</strong> at the
@@ -242,18 +278,19 @@
           into management and sustainable development.
         </p>
 
-        <p>
+        <p data-en="My research interests include the following key areas:" data-zh="我的研究兴趣主要包括以下方向：">
           My research interests include the following key areas:
         </p>
 
         <ol class="interests-list">
-          <li><strong>Harnessing Generative AI for Construction Management</strong></li>
-          <li><strong>Applying Reinforcement Learning in Optimization and Decision-making</strong></li>
-          <li><strong>AI-Empowered Smart Operations and Maintenance of Infrastructure</strong></li>
-          <li><strong>Big Data Mining for Sustainable Urban Research</strong></li>
+          <li><strong data-en="Harnessing Generative AI for Construction Management" data-zh="面向工程管理的生成式人工智能应用">Harnessing Generative AI for Construction Management</strong></li>
+          <li><strong data-en="Applying Reinforcement Learning in Optimization and Decision-making" data-zh="面向优化与决策的强化学习方法">Applying Reinforcement Learning in Optimization and Decision-making</strong></li>
+          <li><strong data-en="AI-Empowered Smart Operations and Maintenance of Infrastructure" data-zh="人工智能赋能的基础设施智慧运维">AI-Empowered Smart Operations and Maintenance of Infrastructure</strong></li>
+          <li><strong data-en="Big Data Mining for Sustainable Urban Research" data-zh="面向可持续城市研究的大数据挖掘">Big Data Mining for Sustainable Urban Research</strong></li>
         </ol>
 
-        <p>
+        <p data-en="Outside of academics, I enjoy an active lifestyle. My hobbies include playing table tennis and badminton, hiking through scenic trails, and occasionally running. Additionally, I run an academic self-media account where I share my learning experiences and insights with a broader audience. Feel free to connect and exchange ideas with me!"
+          data-zh="学术之外，我喜欢保持积极的生活方式，爱好包括乒乓球、羽毛球、徒步和跑步。我也运营学术自媒体账号，分享学习经验与研究思考，欢迎交流。">
           Outside of academics, I enjoy an active lifestyle. My hobbies include playing <strong>table tennis</strong>
           and
           <strong>badminton</strong>, hiking through scenic trails, and occasionally running. Additionally, I run an
@@ -274,6 +311,103 @@
             <i class="fa fa-wechat self-media-icon"></i> WeChat Official Account (公众号)
           </a>
         </div>
+
+        <div class="research-matrix" data-aos="fade-up">
+          <div class="research-card">
+            <span class="research-card-label" data-en="Current Focus" data-zh="当前方向">Current Focus</span>
+            <h4 data-en="AI for Construction Safety" data-zh="面向施工安全的人工智能">AI for Construction Safety</h4>
+            <p data-en="Vision-language models, report generation, safety behavior analysis, and personalized training."
+              data-zh="聚焦视觉语言模型、报告生成、安全行为分析与个性化培训。">Vision-language models, report generation, safety behavior analysis, and personalized training.</p>
+          </div>
+          <div class="research-card">
+            <span class="research-card-label" data-en="Methods" data-zh="方法体系">Methods</span>
+            <h4 data-en="Learning + Reasoning" data-zh="学习与推理">Learning + Reasoning</h4>
+            <p data-en="Generative AI, reinforcement learning, knowledge graphs, and big data mining for decision support."
+              data-zh="结合生成式 AI、强化学习、知识图谱与大数据挖掘，支撑工程决策。">Generative AI, reinforcement learning, knowledge graphs, and big data mining for decision support.</p>
+          </div>
+          <div class="research-card">
+            <span class="research-card-label" data-en="Open Science" data-zh="开放科学">Open Science</span>
+            <h4 data-en="Datasets and Tools" data-zh="数据集与工具">Datasets and Tools</h4>
+            <p data-en="Sharing research outputs such as CPPED and Text2Label to support reproducible academic work."
+              data-zh="分享 CPPED、Text2Label 等研究资源，支持可复现的学术工作。">Sharing research outputs such as CPPED and Text2Label to support reproducible academic work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- Highlights Section                          -->
+  <!-- ========================================== -->
+  <div class="section highlights-section scrollspy" id="highlights">
+    <div class="row container">
+      <h2 class="section-title" data-aos="fade-up" data-en="Research Highlights" data-zh="研究亮点">Research Highlights</h2>
+      <div class="academic-updates" data-aos="fade-up">
+        <div class="update-column">
+          <h3><a href="#publication" data-en="news" data-zh="动态">news</a></h3>
+          <div class="update-list">
+            <div class="update-item">
+              <time>2026-XX-XX</time>
+              <p>
+                <a href="https://doi.org/10.1016/j.autcon.2026.106932" target="_blank">
+                  <span data-en="Domain-adapted vision-language fusion for worker action recognition in construction videos."
+                    data-zh="面向施工视频中工人动作识别的领域自适应视觉语言融合方法。">Domain-adapted vision-language fusion for worker action recognition in construction videos.</span>
+                </a>
+                <span data-en=" was published in " data-zh="发表于 "></span><em>Automation in Construction</em>.
+              </p>
+            </div>
+            <div class="update-item">
+              <time>2026-XX-XX</time>
+              <p>
+                <a href="https://doi.org/10.1016/j.compind.2025.104399" target="_blank">
+                  <span data-en="Enhancing fire evacuation safety in metro stations with multi-agent reinforcement learning."
+                    data-zh="基于多智能体强化学习提升地铁站火灾疏散安全。">Enhancing fire evacuation safety in metro stations with multi-agent reinforcement learning.</span>
+                </a>
+                <span data-en=" appeared in " data-zh="发表于 "></span><em>Computers & Industrial Engineering</em>.
+              </p>
+            </div>
+            <div class="update-item">
+              <time>2025-XX-XX</time>
+              <p>
+                <a href="https://github.com/QHCV/CPPED" target="_blank">CPPED</a>
+                <span data-en=" was released as a construction personal protective equipment violation dataset."
+                  data-zh="作为施工个人防护装备违规数据集发布。"> was released as a construction personal protective equipment violation dataset.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="update-column">
+          <h3><a href="#Resource" data-en="latest resources" data-zh="最新资源">latest resources</a></h3>
+          <div class="update-list">
+            <div class="update-item">
+              <time>2025-XX-XX</time>
+              <p>
+                <a href="https://github.com/QHCV/Text2label" target="_blank">Text2Label</a>
+                <span data-en=" provides a Flask-based interface for binary text tagging and report annotation."
+                  data-zh="提供基于 Flask 的二分类文本标注与报告注释界面。"> provides a Flask-based interface for binary text tagging and report annotation.</span>
+              </p>
+            </div>
+            <div class="update-item">
+              <time>2024-XX-XX</time>
+              <p>
+                <a href="https://qhcv.github.io/chenasuny/publications/cakg/" target="_blank">
+                  <span data-en="A civil aviation knowledge graph study"
+                    data-zh="民航知识图谱研究">A civil aviation knowledge graph study</span>
+                </a>
+                <span data-en=" explored structured knowledge modeling and reasoning."
+                  data-zh="探索结构化知识建模与推理。"> explored structured knowledge modeling and reasoning.</span>
+              </p>
+            </div>
+            <div class="update-item">
+              <time>2023-XX-XX</time>
+              <p>
+                <span data-en="Oral presentations were delivered at national BIM and civil engineering simulation conferences."
+                  data-zh="在全国 BIM 与土木工程计算仿真相关会议作口头报告。">Oral presentations were delivered at national BIM and civil engineering simulation conferences.</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -283,8 +417,21 @@
   <!-- ========================================== -->
   <div class="section publication-section scrollspy" id="publication">
     <div class="row container">
-      <h2 class="section-title" data-aos="fade-up">Publications</h2>
+      <h2 class="section-title" data-aos="fade-up" data-en="Publications" data-zh="论文成果">Publications</h2>
+      <div class="publication-toolbar" data-aos="fade-up">
+        <button class="pub-filter active-filter" type="button" data-publication-filter="selected"
+          data-en="Selected Works (7)" data-zh="代表性成果（7）">Selected Works (7)</button>
+        <button class="pub-filter" type="button" data-publication-filter="collaboration"
+          data-en="Collaboration Works (2)" data-zh="合作成果（2）">Collaboration Works (2)</button>
+        <button class="pub-filter" type="button" data-publication-filter="conference"
+          data-en="Conference Works (1)" data-zh="会议论文（1）">Conference Works (1)</button>
+        <a href="https://scholar.google.com/citations?hl=zh-CN&user=kIX_EAIAAAAJ" target="_blank" class="pub-filter">
+          <i class="fa fa-external-link"></i> <span data-en="Scholar Profile" data-zh="Google Scholar 主页">Scholar Profile</span>
+        </a>
+      </div>
 
+      <div class="publication-groups">
+        <div class="publication-group active-publication-group" data-publication-group="selected">
       <!-- Paper 1 -->
       <div class="row paper-block" data-aos="fade-up">
         <div class="col s12 m12 l4 center">
@@ -476,15 +623,9 @@
       </div>
 
 
-    </div>
-  </div>
+        </div>
 
-  <!-- ========================================== -->
-  <!-- Collaboration Publications Section          -->
-  <!-- ========================================== -->
-  <div class="section publication-section scrollspy" id="collaboration-publication">
-    <div class="row container">
-      <h2 class="section-title" data-aos="fade-up">Collaboration Publications</h2>
+        <div class="publication-group" data-publication-group="collaboration">
 
       <!-- Collab Paper 1 -->
       <div class="row paper-block" data-aos="fade-up">
@@ -538,6 +679,40 @@
           </div>
         </div>
       </div>
+        </div>
+
+        <div class="publication-group" data-publication-group="conference">
+      <!-- Conference Paper 1 -->
+      <div class="row paper-block" data-aos="fade-up">
+        <div class="col s12 m12 l4 center">
+          <a href="https://search.proquest.com/openview/70bd2b2a0151627d6a8579198cfc6528/1?pq-origsite=gscholar&cbl=1646340"
+            target="_blank" class="paper-placeholder">
+            <i class="fa fa-university"></i>
+            <span>ISARC 2025</span>
+          </a>
+        </div>
+        <div class="col s12 m12 l8">
+          <a href="https://search.proquest.com/openview/70bd2b2a0151627d6a8579198cfc6528/1?pq-origsite=gscholar&cbl=1646340"
+            class="paper-title" target="_blank">
+            Tailored Vision-Language Solutions for Comprehensive Hazard Identification on Construction Sites
+          </a>
+          <div class="paper-author">
+            <b>Qihua Chen</b>, Xianfei Yin
+          </div>
+          <div class="paper-conf">
+            <b>ISARC. Proceedings of the International Symposium on Automation and Robotics in Construction, 42, 548-555, 2025</b>
+          </div>
+          <div>
+            <img class="responsive-img icon" src="images/icons/pdf.jpg" style="width: 20px; vertical-align: middle;">
+            <a href="https://search.proquest.com/openview/70bd2b2a0151627d6a8579198cfc6528/1?pq-origsite=gscholar&cbl=1646340"
+              target="_blank">paper</a> |
+            <a href="https://scholar.google.com/scholar?oi=bibs&cluster=5355650072672363139&btnI=1&hl=zh-CN"
+              target="_blank">Scholar</a>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -546,25 +721,35 @@
   <!-- ========================================== -->
   <div class="section activities-section scrollspy" id="activities">
     <div class="row container">
-      <h2 class="section-title" data-aos="fade-up">Academic Activities</h2>
+      <h2 class="section-title" data-aos="fade-up" data-en="Academic Activities" data-zh="学术活动">Academic Activities</h2>
 
-      <h3 class="subsection-title">Presentations</h3>
-      <ul data-aos="fade-up">
-        <li>&bull; The 8th National BIM Academic Conference, 2023, Oral presentation.</li>
-        <li>&bull; The 3rd National Academic Conference on Civil Engineering Calculation and Simulation Technology,
-          2023, Oral presentation.</li>
-      </ul> 
+      <div class="activity-grid">
+        <div class="activity-card" data-aos="fade-up">
+          <span class="activity-icon"><i class="fa fa-microphone"></i></span>
+          <h3 class="subsection-title" data-en="Presentations" data-zh="会议报告">Presentations</h3>
+          <ul class="activity-list">
+            <li data-en="The 8th National BIM Academic Conference, 2023, Oral presentation."
+              data-zh="第八届全国 BIM 学术会议，2023，口头报告。">The 8th National BIM Academic Conference, 2023, Oral presentation.</li>
+            <li data-en="The 3rd National Academic Conference on Civil Engineering Calculation and Simulation Technology, 2023, Oral presentation."
+              data-zh="第三届全国土木工程计算与仿真技术学术会议，2023，口头报告。">The 3rd National Academic Conference on Civil Engineering Calculation and Simulation Technology,
+              2023, Oral presentation.</li>
+          </ul>
+        </div>
 
-      <h3 class="subsection-title">Journal Reviewer</h3>
-      <ul data-aos="fade-up">
-        <li>&bull; Sustainable Cities and Society (<b>SCS</b>)</li>
-        <li>&bull; Advanced Engineering Informatics (<b>AEI</b>)</li>
-        <li>&bull; Automation in Construction (<b>AIC</b>)</li>
-        <li>&bull; Reliability Engineering & Systems Safety (<b>RESS</b>)</li>
-        <li>&bull; Discover Applied Sciences</li>
-        <li>&bull; Scientific Reports</li>
-        <li>&bull; Cluster Computing</li>
-      </ul>
+        <div class="activity-card" data-aos="fade-up">
+          <span class="activity-icon"><i class="fa fa-check-square-o"></i></span>
+          <h3 class="subsection-title" data-en="Journal Reviewer" data-zh="期刊审稿">Journal Reviewer</h3>
+          <ul class="activity-list reviewer-list">
+            <li>Sustainable Cities and Society (<b>SCS</b>)</li>
+            <li>Advanced Engineering Informatics (<b>AEI</b>)</li>
+            <li>Automation in Construction (<b>AIC</b>)</li>
+            <li>Reliability Engineering & Systems Safety (<b>RESS</b>)</li>
+            <li>Discover Applied Sciences</li>
+            <li>Scientific Reports</li>
+            <li>Cluster Computing</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -573,8 +758,9 @@
   <!-- ========================================== -->
   <div class="section activities-section scrollspy" id="Resource">
     <div class="row container">
-      <h2 class="section-title" data-aos="fade-up">Resource</h2>
-      <p style="color: #666;" data-aos="fade-up">
+      <h2 class="section-title" data-aos="fade-up" data-en="Resource" data-zh="资源">Resource</h2>
+      <p style="color: #666;" data-aos="fade-up" data-en="I actively share research outputs and tools to support the community."
+        data-zh="我持续分享研究产出与工具，希望为相关领域研究者提供支持。">
         I actively share research outputs and tools to support the community.
       </p>
       <ul class="resource-list" data-aos="fade-up">
@@ -587,35 +773,57 @@
   </div>
 
   <!-- ========================================== -->
+  <!-- Friend Links Section                        -->
+  <!-- ========================================== -->
+  <div class="section links-section scrollspy" id="links">
+    <div class="row container">
+      <h2 class="section-title" data-aos="fade-up" data-en="Friend Links" data-zh="友情链接">Friend Links</h2>
+      <p class="section-intro" data-aos="fade-up" data-en="Friend link slots are reserved here. If you would like to exchange academic links, please contact me by email."
+        data-zh="这里预留友链位置。如需互换学术主页、课题组网站或开源项目链接，请通过邮箱联系我。">
+        Friend link slots are reserved here. If you would like to exchange academic links, please contact me by email.
+      </p>
+      <div class="friend-link-grid" data-aos="fade-up">
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 1"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 2"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 3"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 4"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 5"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 6"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 7"></div>
+        <div class="friend-link-card friend-link-placeholder" aria-label="Empty friend link slot 8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
   <!-- Footer                                      -->
   <!-- ========================================== -->
   <div class="divider"></div>
   <footer class="page-footer white lighten-4">
-    <div class="row">
-      <div class="col s12 center-align">
-        <div class="visitor-map-container" style="display: inline-block; max-width: 100%;">
-          <a href='https://clustrmaps.com/site/1c4h9' title='Visit tracker' style="display: inline-block; border: 2px solid #ededed; border-radius: 10px; 
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; background-color: #fff;">
+    <div class="footer-inner container">
+      <div class="visitor-map-container">
+        <a class="visitor-map-link" href='https://clustrmaps.com/site/1c4h9' target="_blank" title='Visit tracker'>
             <img
               src='//clustrmaps.com/map_v2.png?cl=2390d5&w=a&t=tt&d=_Y7kv9RsPgzT1Pf1TJC3o6mNb-rDfkzoB1qwMdFsbHE&co=e1e9ee&ct=7e3434'
-              alt='ClustrMaps' style="max-width: 100%; height: auto; border-radius: 5px;" />
+              alt='ClustrMaps' />
           </a>
+      </div>
+
+      <div class="footer-meta">
+        <div class="footer-email">
+          <i class="fa fa-envelope footer-email-icon"></i>
+          <span data-en="Contact me:" data-zh="联系我：">Contact me:</span>&nbsp;chenasuny@gmail.com
+          <button class="email-copy-btn" type="button" data-en="Copy" data-zh="复制" data-copied-en="Copied!" data-copied-zh="已复制"
+            onclick="copyEmail(this)">
+            Copy
+          </button>
+        </div>
+
+        <div class="footer-copyright center black-text" data-en="© 2024-present QH | updated April 27, 2026"
+          data-zh="© 2024 至今 QH | 更新于 2026 年 4 月 27 日">
+          © 2024-present QH | updated April 27, 2026
         </div>
       </div>
-    </div>
-
-    <!-- Email in footer -->
-    <div class="footer-email">
-      <i class="fa fa-envelope footer-email-icon"></i>
-      Contact me: chenasuny@gmail.com
-      <button class="email-copy-btn"
-        onclick="navigator.clipboard.writeText('chenasuny@gmail.com'); this.textContent='Copied!'; setTimeout(() => this.textContent='Copy', 1500);">
-        Copy
-      </button>
-    </div>
-
-    <div class="footer-copyright center black-text">
-      © 2024–present QH | updated April 27, 2026
     </div>
   </footer>
 
@@ -636,26 +844,125 @@
     // Initialize AOS
     AOS.init({ duration: 800, once: true });
 
+    const languageStorageKey = 'languagePreference';
+    let currentLanguage = localStorage.getItem(languageStorageKey) || 'en';
+
+    function applyLanguage(language) {
+      currentLanguage = language === 'zh' ? 'zh' : 'en';
+      document.documentElement.lang = currentLanguage === 'zh' ? 'zh-CN' : 'en';
+      document.querySelectorAll('[data-en][data-zh]').forEach(element => {
+        element.textContent = element.dataset[currentLanguage];
+      });
+      document.querySelectorAll('[data-lang-toggle]').forEach(button => {
+        button.textContent = currentLanguage === 'zh' ? 'EN' : '中文';
+        button.setAttribute('aria-label', currentLanguage === 'zh' ? 'Switch to English' : '切换到中文');
+      });
+      localStorage.setItem(languageStorageKey, currentLanguage);
+    }
+
+    function copyEmail(button) {
+      const email = 'chenasuny@gmail.com';
+      const normalText = button.dataset[currentLanguage] || button.dataset.en || 'Copy';
+      const copiedText = button.dataset[`copied${currentLanguage === 'zh' ? 'Zh' : 'En'}`] || 'Copied!';
+      const fallbackCopy = () => {
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+      button.textContent = copiedText;
+      setTimeout(() => {
+        button.textContent = normalText;
+      }, 1500);
+    }
+
+    function updatePublicationCounts() {
+      const labels = {
+        selected: { en: 'Selected Works', zh: '代表性成果' },
+        collaboration: { en: 'Collaboration Works', zh: '合作成果' },
+        conference: { en: 'Conference Works', zh: '会议论文' }
+      };
+      document.querySelectorAll('[data-publication-filter]').forEach(button => {
+        const groupName = button.dataset.publicationFilter;
+        const group = document.querySelector(`[data-publication-group="${groupName}"]`);
+        const count = group ? group.querySelectorAll('.paper-block').length : 0;
+        if (labels[groupName]) {
+          button.dataset.en = `${labels[groupName].en} (${count})`;
+          button.dataset.zh = `${labels[groupName].zh}（${count}）`;
+        }
+      });
+    }
+
+    function showPublicationGroup(groupName) {
+      document.querySelectorAll('[data-publication-filter]').forEach(button => {
+        button.classList.toggle('active-filter', button.dataset.publicationFilter === groupName);
+      });
+      document.querySelectorAll('[data-publication-group]').forEach(group => {
+        group.classList.toggle('active-publication-group', group.dataset.publicationGroup === groupName);
+      });
+      if (window.AOS) {
+        AOS.refreshHard();
+      }
+    }
+
+    document.querySelectorAll('[data-publication-filter]').forEach(button => {
+      button.addEventListener('click', () => {
+        showPublicationGroup(button.dataset.publicationFilter);
+      });
+    });
+
+    document.querySelectorAll('[data-lang-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        applyLanguage(currentLanguage === 'zh' ? 'en' : 'zh');
+      });
+    });
+    updatePublicationCounts();
+    applyLanguage(currentLanguage);
+    showPublicationGroup('selected');
+
     // Back-to-top button logic
     window.addEventListener('scroll', () => {
       const backToTop = document.getElementById('back-to-top');
+      const progress = document.getElementById('reading-progress');
       if (window.pageYOffset > 300) {
         backToTop.classList.add('show');
       } else {
         backToTop.classList.remove('show');
+      }
+      if (progress) {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const width = scrollable > 0 ? (window.pageYOffset / scrollable) * 100 : 0;
+        progress.style.width = width + '%';
       }
     });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') {
+          return;
+        }
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           window.scrollTo({
             top: target.offsetTop - 60,
             behavior: 'smooth'
           });
+        }
+        if (window.jQuery && $('.button-collapse').sideNav) {
+          $('.button-collapse').sideNav('hide');
         }
       });
     });
